@@ -3,7 +3,71 @@
 :root {
     --transp-background:  rgba(20, 30, 20, 0.7);
 }
+.toggle{
+    position: absolute;
+    top: 0;
+    left:0;
+    margin-top: 30px;
+    margin-left: 250px;
+    background-color: var(--transp-background);
+    color: white;
+}
+.toggle:hover{
+    transform: scale(1.4);
+}
+.side-bar{
+    background-color: var(--transp-background);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 200px;
+    /* transform: translateX(-100%); */
+}
+.side-bar ul li a{
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    text-decoration: none;
+    margin-bottom: 40px;
 
+}
+.side-bar ul{
+    list-style-type: none;
+    
+}
+.side-bar ul li:hover{
+    transform: scale(1.1);
+}
+.container-form{
+    background-color: var(--transp-background);
+    width: 400px;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 70vh;
+    margin-top: 150px;
+    /* display: none; */
+
+}
+.form .input{
+    padding: 10px;
+    color: white;
+    width: 100%;
+    font-size: 22px;
+}
+
+.insert{
+    padding: 10px;
+    width: 100%;
+    padding: 10px;
+}
+.insert:focus{
+    outline:none;
+    color: green;
+}
 
 *{
     box-sizing: border-box;
@@ -18,21 +82,27 @@ body{
     height: 100vh;
     font-family: Pacifico;
 }
+.container-quote{
 
+   height: 70vh;
+   width: 400px;
+   margin-right: 90px;
+}
 
 
 .quote{
+    width: 500px;
+    height: 300px;
+    margin: auto;
     padding: 90px;
     background-color: rgba(20, 30, 20, 0.7);
     font-size: 30px;
     color: seashell;
-}
-.quote:hover{
-    font-size: 40px;
-
+    overflow: scroll;
 }
 
 h1{
+    position: sticky;
     font-size: xx-large;
     color: seashell;
 }
@@ -49,7 +119,7 @@ p{
 }
 
 .btn{
-    display: block;
+    position: absolute;
     padding: 5px;
     width: 90px;
     background-color: rgba(20, 30, 20, 0.7);
