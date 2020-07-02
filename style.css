@@ -4,16 +4,22 @@
     --transp-background:  rgba(20, 30, 20, 0.7);
 }
 .toggle{
-    position: absolute;
+    position: fixed;
     top: 0;
     left:0;
     margin-top: 30px;
-    margin-left: 250px;
+    margin-left: 20px;
     background-color: var(--transp-background);
     color: white;
 }
 .toggle:hover{
     transform: scale(1.4);
+}
+.toggle:focus{
+    outline: none;
+}
+body.appear{
+    transform: translateX(200px);
 }
 .side-bar{
     background-color: var(--transp-background);
@@ -22,7 +28,8 @@
     left: 0;
     height: 100vh;
     width: 200px;
-    /* transform: translateX(-100%); */
+    z-index: 100;
+    transform: translateX(-100%);
 }
 .side-bar ul li a{
     color: white;
@@ -51,6 +58,9 @@
     margin-top: 150px;
     /* display: none; */
 
+}
+body.appear-form{
+    display:block;
 }
 .form .input{
     padding: 10px;
@@ -83,14 +93,18 @@ body{
     font-family: Pacifico;
 }
 .container-quote{
-
-   height: 70vh;
+   position: fixed;
+   top:0;
+   right: ;
+   height: 100px;
    width: 400px;
-   margin-right: 90px;
+   margin-right: 90px; 
+   display: none;
 }
 
 
 .quote{
+    
     width: 500px;
     height: 300px;
     margin: auto;
@@ -140,8 +154,8 @@ p{
   bottom: 0;
   width: 100%;
   color: white;
-  text-align: end;
-  font-size: 30px;
+  text-align: center;
+  font-size: 20px;
 }
 .form-btn{
     background: var(--transp-background);
