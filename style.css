@@ -2,6 +2,8 @@
 
 :root {
     --transp-background:  rgba(20, 30, 20, 0.7);
+    --error-colour: red;
+    --correct-colour:green;
 }
 *{
     box-sizing: border-box;
@@ -35,6 +37,7 @@ body{
 body.appear{
     transform: translateX(200px);
 }
+/* Side bar menu style */
 .side-bar{
     background-color: var(--transp-background);
     position: fixed;
@@ -61,55 +64,67 @@ body.appear{
 .side-bar ul li:hover{
     transform: scale(1.1);
 }
+/* form style */
 .container-form{
-    background-color: var(--transp-background);
-    width: 400px;
-    padding: 20px;
+    /* background-color: var(--transp-background); */
+    width: 370px;
+    padding: 10px;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
-    height: 70vh;
-    margin-top: 150px;
-    margin-right: 300px;
-    display: none;
-    animation-name: openform;
-    animation-duration: 5s;
+    height: 75vh;
+    margin-top: 130px;
+    margin-right: 200px;
+    /* display: none; */
+    /* animation-name: openform; */
+    /* animation-duration: 5s; */
     border-radius: 10px;
 }
 .open-form{
     display: block;
 }
 
-@keyframes openform{
+/* @keyframes openform{
     from{
         opacity:0;
     }
     to{
         opacity:1;
     }
+} */
+.inputArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
-.form .input{
-    padding: 10px;
-    color: white;
-    width: 100%;
-    font-size: 30px;
-}
-
-.insert{
-    padding: 10px;
-    width: 100%;
+.input{
+    padding: 5px;
     font-size: 20px;
+    width: 300px;
     font-family: monospace;
-    border-radius: 20px;
 }
-.insert:focus{
-    outline: none;
+label{
+    color: white;
+    font-size: 20px;
+
 }
-.insert:hover{
-    transform: scale(1.2);
+.inputArea small{
+    color:var(--error-colour);
+    position: absolute;
+    visibility: hidden;
 }
+.inputArea.error small{
+    visibility: visible;
+}
+.inputArea.correct input{
+    border-color: var(--correct-colour);
+}
+.inputArea.error input{
+    border-color: var(--error-colour);
+}
+
+
 
 /* QUOTE STYLE */
 .container-quote{
@@ -174,26 +189,27 @@ p{
     position: fixed;
     font-size: 30px;
     padding: 10px;
-    right: 80px;
+    right: 140px;
     top: 25px;
-    margin-right: 340px;
+    margin-right: 160px;
     border-radius: 50px;
     
 }
-.modal-btn{
+.submit{
     background-color: var(--transp-background);
     display: block;
-    margin-top: 30px;
-    padding: 15px;
+    padding: 5px;
     border-radius: 50px;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
+    width: 300px;
     cursor: pointer;
+    margin-left: 30px;
 }
-.modal-btn:focus{
+.submit:focus{
     outline: none;
 }
-.modal-btn:hover,
+.submit:hover,
 .form-btn:hover{
     transform: scale(1.2);
     cursor: pointer;
