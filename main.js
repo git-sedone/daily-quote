@@ -1,6 +1,4 @@
-/////////////////////////////////////////////////////////////////////
-// dom manipulation ////////////////////////////////////////////////
-
+// dom manipulation
 const dailyquote = document.getElementById('quote');
 const quotebtn = document.getElementById('quote-btn');
 const toggle = document.getElementById('toggle');
@@ -25,18 +23,13 @@ formBtn.addEventListener('click', function(){
     containerForm.classList.toggle('open-form');
 })
 
-//////////////////////////////////////////////////////////////
-// form validation////////////////////////////////////////////
+// form validation
 const name = document.getElementById('name');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 const number = document.getElementById('number');
 const form = document.getElementById('form');
-
-
-
-
 
 form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -46,8 +39,6 @@ form.addEventListener('submit', function(e){
     checkEmail(email);
     checkPassword(password);
     checkPassword2(password, password2);
-    
-    
 })
 
 function errormsg(input, message){
@@ -56,17 +47,20 @@ function errormsg(input, message){
     const small= inputArea.querySelector('small');
     small.innerText = message
 }
+
 function correctmsg(input){
     inputArea=input.parentElement
     inputArea.className = 'inputArea correct small'
 }
 
-function checkEmail(input){
-    let cc = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
-    if(cc.test(input.value)){
-        correctmsg(input)
+function checkEmail(emailInput){
+    let emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+    const isEmail = emailRegex.test(emailInput.value);
+
+    if(isEmail){
+        correctmsg(emailInput)
     }else{
-        errormsg(input, 'invalid email')
+        errormsg(emailInput, 'invalid email')
     }
 }
 
@@ -74,23 +68,25 @@ function checkName(input){
     if(input.value === ''){
         errormsg(input, 'name required')
     }else if(input.value.length <= 2){
-        errormsg(input, 'minimum 2 characters required')
+        errormsg(input, 'minimum 3 characters required')
     }else{
         correctmsg(input)
     }
 }
-function checkNumber(input){
-    // console.log("typeof input is: ", typeof input.value);
-    // console.log(isNaN(input));
-    if(input.value !== ''){
-        const list = [0,1,2,3,4,5,6,7,8,9,];
-        for(i=0; i<list.length; i++){
-            if(input.value.match(list[i])){
-                correctmsg(input);
-            }else{
-                errormsg(input, 'invalid number format')
-            }
-}}}
+
+function checkNumber(input){    
+    let numericRegex  = /^[0-9]+$/i;
+    let isPhoneValid = numericRegex.test(input.value);
+
+    console.log("value of isPhoneValid is: ", isPhoneValid);
+
+    if(isPhoneValid){
+        correctmsg(input);    
+    } else {
+        errormsg(input, 'invalid number format')
+    }
+}
+
 function checkPassword(input){
     if(!isNaN(input)&&(input.value.length==10 )){
         errormsg(input, 'password is required')
@@ -100,6 +96,7 @@ function checkPassword(input){
             correctmsg(input)
         }
 }
+
 function checkPassword2(input1, input2){
     if(input1.value !== input2.value){
         errormsg(input2, 'password do not match')
@@ -110,4 +107,3 @@ function checkPassword2(input1, input2){
         correctmsg(input2)
     }
 }
-
