@@ -80,16 +80,19 @@ function checkName(input){
     }
 }
 function checkNumber(input){
-    console.log("typeof input is: ", typeof input.value);
-    console.log(isNaN(input));
-    if(typeof input === number){
-        correctmsg(input);
-    }else{
-        errormsg(input, 'invalid number format')
-    }
-}
+    // console.log("typeof input is: ", typeof input.value);
+    // console.log(isNaN(input));
+    if(input.value !== ''){
+        const list = [0,1,2,3,4,5,6,7,8,9,];
+        for(i=0; i<list.length; i++){
+            if(input.value.match(list[i])){
+                correctmsg(input);
+            }else{
+                errormsg(input, 'invalid number format')
+            }
+}}}
 function checkPassword(input){
-    if(input.value === ''){
+    if(!isNaN(input)&&(input.value.length==10 )){
         errormsg(input, 'password is required')
         }else if(input.value.length<4){
             errormsg(input, 'minimum 4 characters is required')
