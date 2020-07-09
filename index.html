@@ -13,7 +13,7 @@
             <h1>Your Today Quote is :</h1>
     
             <div class="quote" id="quote"></div>
-            <p>click the button to have your daily quote</p>
+            <p>click the get button to have your daily quote</p>
             
             <button class="quote-btn" id="quote-btn">get</button>
             
@@ -32,25 +32,43 @@
 
         </div>
         <button class="form-btn" id="form-btn">JOIN US</button>
-        <div class="container-form" id="container-form">
-            <div class="form">
-                <div class="input" id="input">
-                    <label for="name">name</label>
-                    <input type="text" id="name" placeholder="enter name" class="insert">
-                </div>
-                <div class="input" id="input">
-                    <label for="email">email</label>
-                    <input type="email" id="email" placeholder="enter email" class="insert">
-                </div>
-                <div class="input" id="input">
-                    <label for="password">password</label>
-                    <input type="password" id="password" placeholder="enter password" class="insert">
-                </div>
-                <div class="input" id="input">
-                    <label for="password2">confirm password</label>
-                    <input type="password" id="password2" placeholder="confirm password" class="insert">
-                </div>
-                <button class="modal-btn">Submit</button>
+         <div class="container-form" id="container-form">
+                <form class="form" id= "form">
+                
+                    <div class="inputArea" id="inputArea">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="enter name">
+                        <small>Invalid</small>
+                    </div>
+                      
+                    <div class="inputArea" id="inputArea"> 
+                        <label for="email">Email</label>
+                        <input type="text" id="email" placeholder="enter email">
+                        <small>Invalid</small>
+                    </div>
+                    <div class="inputArea" id="inputArea">
+
+                        <label for="phonenumber">Phone Number</label>
+                        <input type="text" id="number" placeholder="enter phone number">
+                        <small>Invalid</small>
+                    </div>
+
+                    <div class="inputArea" id="inputArea">
+
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="enter password">
+                        <small>Invalid</small>
+                    </div>
+                    
+                    <div class="inputArea" id="inputArea">
+
+                        <label for="password2">Confirm password</label>
+                        <input type="password" id="password2" placeholder="confirm password">
+                        <small>Invalid</small>
+                    </div>
+                    <button type="submit" id = "submit"class="submit">Submit</button>
+                    
+                </form>
             </div>
         </div>
     </div>
@@ -58,6 +76,6 @@
 
     </div>
     <script src="main.js"></script>
-    <footer class="footer"><p>Kuily Balendran &copy</p></footer>
+    <footer class="footer">Kuily Balendran &copy;</footer>
 </body>
 </html>

@@ -2,6 +2,8 @@
 
 :root {
     --transp-background:  rgba(20, 30, 20, 0.7);
+    --error-colour: red;
+    --correct-colour:green;
 }
 *{
     box-sizing: border-box;
@@ -35,6 +37,7 @@ body{
 body.appear{
     transform: translateX(200px);
 }
+/* Side bar menu style */
 .side-bar{
     background-color: var(--transp-background);
     position: fixed;
@@ -61,21 +64,22 @@ body.appear{
 .side-bar ul li:hover{
     transform: scale(1.1);
 }
+/* form style */
 .container-form{
     background-color: var(--transp-background);
-    width: 400px;
-    padding: 20px;
+    width: 350px;
+    padding: 10px;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
-    height: 70vh;
-    margin-top: 150px;
-    margin-right: 300px;
-    display: none;
+    height: 80vh;
+    margin-top: 110px;
+    margin-right: 220px;
+    display: none; 
     animation-name: openform;
     animation-duration: 5s;
-    border-radius: 10px;
+    border-radius: 50px;
 }
 .open-form{
     display: block;
@@ -89,27 +93,69 @@ body.appear{
         opacity:1;
     }
 }
-
-.form .input{
+.inputArea{
+    display: flex;
+    flex-direction: column;
     padding: 10px;
-    color: white;
-    width: 100%;
-    font-size: 30px;
+    align-items: center;
 }
-
-.insert{
-    padding: 10px;
-    width: 100%;
+.inputArea input{
     font-size: 20px;
+    width: 300px;
     font-family: monospace;
-    border-radius: 20px;
+    margin-left: 10px;
+    border-radius: 10px;
 }
-.insert:focus{
+.inputArea input:focus{
     outline: none;
 }
-.insert:hover{
+.inputArea input:hover{
+    transform: scale(1.2)
+}
+label{
+    color: white;
+    font-size: 20px;
+
+}
+.inputArea small{
+    color:var(--error-colour);
+    visibility: hidden;
+    position: relative;
+    font-family: monospace;
+    font-size: 15px;
+    
+}
+.inputArea.error small{
+    visibility: visible;
+}
+.inputArea.correct input{
+    border: solid 5px var(--correct-colour);
+}
+.inputArea.error input{
+    border-color: var(--error-colour);
+}
+
+.submit{
+    display: block;
+    margin-left: 80px;
+    width: 200px;
+    background-color: var(--transp-background);
+    color: white;
+    font-size: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 10px;
+}
+.submit:focus{
+    outline: none;
+}
+.submit:hover{
     transform: scale(1.2);
 }
+
+
+
+
 
 /* QUOTE STYLE */
 .container-quote{
@@ -136,7 +182,7 @@ body.appear{
 
 h1{
     position: sticky;
-    font-size: 40px;
+    font-size: 30px;
     color: white;
 }
 h1:hover{
@@ -172,28 +218,16 @@ p{
     background: var(--transp-background);
     color: white ;
     position: fixed;
-    font-size: 30px;
+    font-size: 20px;
     padding: 10px;
-    right: 80px;
+    right: 140px;
     top: 25px;
-    margin-right: 340px;
+    margin-right: 160px;
     border-radius: 50px;
     
 }
-.modal-btn{
-    background-color: var(--transp-background);
-    display: block;
-    margin-top: 30px;
-    padding: 15px;
-    border-radius: 50px;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-}
-.modal-btn:focus{
-    outline: none;
-}
-.modal-btn:hover,
+
+
 .form-btn:hover{
     transform: scale(1.2);
     cursor: pointer;
@@ -211,4 +245,6 @@ p{
     color: white;
     text-align: center;
     font-size: 20px;
+    font-family: monospace;
+    margin-bottom: 20px;
 }
