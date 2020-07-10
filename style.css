@@ -73,7 +73,7 @@ body.appear{
     top: 0;
     right: 0;
     bottom: 0;
-    height: 80vh;
+    height: 70vh;
     margin-top: 110px;
     margin-right: 220px;
     display: none; 
@@ -137,7 +137,7 @@ label{
 
 .submit{
     display: block;
-    margin-left: 80px;
+    margin-left: 60px;
     width: 200px;
     background-color: var(--transp-background);
     color: white;
