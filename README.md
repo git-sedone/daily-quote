@@ -1,6 +1,6 @@
 # how to open fetch-project-experiment
 
-- In the root of the project, right click in the index.html file and select the option `open with live server`;
+- In the root of `fetch-project-experimentation` project, right click in the index.html file and select the option `open with live server`;
 
 # project content
 
