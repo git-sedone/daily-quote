@@ -4,7 +4,7 @@
 
 # project content
 
-- This project returns a random quote from the `quote garden` API every time the `get` button is clicked;
+- This project returns a random quote from the [quote garden](https://pprathameshmore.github.io/QuoteGarden/) API every time the `get` button is clicked;
 - On the left side there is a `navigation bar` with a `button` to open and close the bar;
 - The `random quote` will be displayed in the `quote container`.
 - The links in the navigation bar are not linked to other pages;
