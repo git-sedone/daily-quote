@@ -21,19 +21,20 @@ form.addEventListener('submit', (e) => {
     checkPassword(password);
     checkPassword2(password, password2);
 })
-
+// error message
 errormsg = ((input, message) => {
     const inputArea=input.parentElement
     inputArea.className = 'inputArea error'
     const small= inputArea.querySelector('small');
     small.innerText = message
 })
-
+// correct input
 correctmsg = (input => {
     inputArea=input.parentElement
     inputArea.className = 'inputArea correct small'
 })
 
+// validation for input fields
 checkEmail = (emailInput => {
     let emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
     const isEmail = emailRegex.test(emailInput.value);
