@@ -5,12 +5,13 @@ const toggle = document.getElementById('toggle');
 
 // fetching the random quote and displaying on the quote container
 quotebtn.addEventListener('click', () => {
-    fetch(`https://quote-garden.herokuapp.com/api/v2/quotes/random`)
+    fetch(`https://quote-garden.herokuapp.com/api/v2/quotes/rando`)
     .then(res => res.json())
     .then(data => {
         dailyquote.innerHTML = `${data.quote.quoteText}`
-        console.log(data);
-        
+    })
+    .catch(error => {
+        throw Error("error in quote garden api", error);
     })
 })
 
