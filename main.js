@@ -3,16 +3,19 @@ const dailyquote = document.getElementById('quote');
 const quotebtn = document.getElementById('quote-btn');
 const toggle = document.getElementById('toggle');
 
-quotebtn.addEventListener('click', function getquote(){
-    fetch(`https://quote-garden.herokuapp.com/api/v2/quotes/random`)
+// fetching the random quote and displaying on the quote container
+quotebtn.addEventListener('click', () => {
+    fetch(`https://quote-garden.herokuapp.com/api/v2/quotes/rando`)
     .then(res => res.json())
     .then(data => {
         dailyquote.innerHTML = `${data.quote.quoteText}`
-        console.log(data);
-        
+    })
+    .catch(error => {
+        throw Error("error in quote garden api", error);
     })
 })
 
-toggle.addEventListener('click', function(){
+// code for the side bar
+toggle.addEventListener('click', () => {
     document.body.classList.toggle('appear');
 })

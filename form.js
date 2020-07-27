@@ -21,20 +21,21 @@ form.addEventListener('submit', (e) => {
     checkPassword(password);
     checkPassword2(password, password2);
 })
-
-function errormsg(input, message){
+// error message
+errormsg = ((input, message) => {
     const inputArea=input.parentElement
     inputArea.className = 'inputArea error'
     const small= inputArea.querySelector('small');
     small.innerText = message
-}
-
-function correctmsg(input){
+})
+// correct input
+correctmsg = (input => {
     inputArea=input.parentElement
     inputArea.className = 'inputArea correct small'
-}
+})
 
-function checkEmail(emailInput){
+// validation for input fields
+checkEmail = (emailInput => {
     let emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
     const isEmail = emailRegex.test(emailInput.value);
 
@@ -43,9 +44,9 @@ function checkEmail(emailInput){
     }else{
         errormsg(emailInput, 'invalid email')
     }
-}
+})
 
-function checkName(input){
+checkName = (input => {
     if(input.value === ''){
         errormsg(input, 'name required')
     }else if(input.value.length <= 2){
@@ -53,9 +54,9 @@ function checkName(input){
     }else{
         correctmsg(input)
     }
-}
+})
 
-function checkNumber(input){    
+checkNumber = (input => {    
     let numericRegex  = /^[0-9]+$/i;
     let isPhoneValid = numericRegex.test(input.value);
 
@@ -66,9 +67,9 @@ function checkNumber(input){
     } else {
         errormsg(input, 'invalid number format')
     }
-}
+})
 
-function checkPassword(input){
+checkPassword = (input => {
     if(!isNaN(input)&&(input.value.length==10 )){
         errormsg(input, 'password is required')
         }else if(input.value.length<4){
@@ -76,9 +77,9 @@ function checkPassword(input){
         }else{
             correctmsg(input)
         }
-}
+})
 
-function checkPassword2(input1, input2){
+checkPassword2 = ((input1, input2) => {
     if(input1.value !== input2.value){
         errormsg(input2, 'password do not match')
         
@@ -87,4 +88,4 @@ function checkPassword2(input1, input2){
     }else{
         correctmsg(input2)
     }
-}
+})
