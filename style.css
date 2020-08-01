@@ -68,12 +68,12 @@ body.appear{
 .container-form{
     background-color: var(--transp-background);
     width: 350px;
+    height: 600px;
     padding: 10px;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
-    height: 70vh;
     margin-top: 110px;
     margin-right: 220px;
     display: none; 
@@ -137,14 +137,14 @@ label{
 
 .submit{
     display: block;
-    margin-left: 60px;
     width: 200px;
     background-color: var(--transp-background);
     color: white;
     font-size: 20px;
     border-radius: 15px;
     cursor: pointer;
-    padding: 2px;
+    padding: 5px;
+    margin-top: 20px;
 }
 .submit:focus{
     outline: none;
@@ -152,10 +152,6 @@ label{
 .submit:hover{
     transform: scale(1.2);
 }
-
-
-
-
 
 /* QUOTE STYLE */
 .container-quote{
@@ -248,3 +244,4 @@ p{
     font-family: monospace;
     margin-bottom: 20px;
 }
+
