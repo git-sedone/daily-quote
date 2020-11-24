@@ -48,6 +48,7 @@ body.appear{
     z-index: 100;
     transform: translateX(-100%);
 }
+
 .side-bar ul li a{
     color: white;
     padding: 10px;
