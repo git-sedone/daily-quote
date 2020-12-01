@@ -30,6 +30,7 @@ body{
 }
 .toggle:hover{
     transform: scale(1.4);
+    cursor: pointer;
 }
 .toggle:focus{
     outline: none;
