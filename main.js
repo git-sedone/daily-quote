@@ -5,13 +5,24 @@ const toggle = document.getElementById('toggle');
 
 // fetching the random quote and displaying on the quote container
 quotebtn.addEventListener('click', () => {
-    fetch(`https://quote-garden.herokuapp.com/api/v2/quotes/random`)
+    fetch(`https://quote-garden.herokuapp.com/api/v3/quotes/random`)
     .then(res => res.json())
-    .then(data => {
-        dailyquote.innerHTML = `${data.quote.quoteText}`
+    .then(res => {
+        // destructed way
+        const [{ _id, quoteText}] = res.data;
+        
+        // non-destructure way
+        // const quoteText = res.data[0].quoteText;
+        // const _id = res.data[0]._id;
+        
+        console.log('>>>>> id is: ', _id)
+        console.log('>>>>> quoteText is: ', quoteText)
+        
+        dailyquote.innerHTML = `${quoteText}`
     })
     .catch(error => {
-        throw Error("error in quote garden api", error);
+        console.log('in error')
+        throw error;
     })
 })
 
