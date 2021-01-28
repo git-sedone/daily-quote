@@ -10,14 +10,6 @@ quotebtn.addEventListener('click', () => {
     .then(res => {
         // destructed way
         const [{ _id, quoteText}] = res.data;
-        
-        // non-destructure way
-        // const quoteText = res.data[0].quoteText;
-        // const _id = res.data[0]._id;
-        
-        console.log('>>>>> id is: ', _id)
-        console.log('>>>>> quoteText is: ', quoteText)
-        
         dailyquote.innerHTML = `${quoteText}`
     })
     .catch(error => {
