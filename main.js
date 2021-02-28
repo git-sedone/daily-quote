@@ -1,24 +1,30 @@
-// dom manipulation
-const dailyquote = document.getElementById('quote');
-const quotebtn = document.getElementById('quote-btn');
-const toggle = document.getElementById('toggle');
 
-// fetching the random quote and displaying on the quote container
-quotebtn.addEventListener('click', () => {
+const getBtn = document.getElementById('get-btn');
+getBtn.addEventListener('click', ()=>{
     fetch(`https://quote-garden.herokuapp.com/api/v3/quotes/random`)
     .then(res => res.json())
     .then(res => {
         // destructed way
         const [{ _id, quoteText}] = res.data;
-        dailyquote.innerHTML = `${quoteText}`
+        quote.innerHTML = `${quoteText}`
     })
     .catch(error => {
-        console.log('in error')
+    
         throw error;
     })
 })
 
-// code for the side bar
-toggle.addEventListener('click', () => {
-    document.body.classList.toggle('appear');
+let toggleButton = document.getElementById('toggle-btn');
+let mobileNav = document.getElementById('mobile-nav');
+let closeNav = document.getElementById('close');
+
+toggleButton.addEventListener('click', function(){
+    
+    mobileNav.style.display='block'
+});
+
+closeNav.addEventListener('click', function(){
+    
+    mobileNav.style.display='none'
+    
 })

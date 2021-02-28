@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-nav-items .main-nav-item a{
+    text-decoration: none;
+    font-size: 30px;
+    list-style: none;
+    color: white;
+    margin-left: 2rem;
+}
+.main-nav-item a:hover{
+    color: grey;
+}
+.main-container{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/tomasz-zagorski-tzHYjk_Ab6k-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    opacity: 0.8;
+
+}
+.about-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    margin: auto;
+    padding: 20px;
+    overflow: scroll;
+}
+.about-container h1{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 50px;
+}
+.about-container h4{
+    font-size: 30px;
+}
+@media(max-width:590px){
+    .about-container h4{
+        font-size: 20px;
+    }
+}

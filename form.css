@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(/img/helena-lopes-RgPQNvoIcdg-unsplash\ \(1\).jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/helena-lopes-RgPQNvoIcdg-unsplash\ \(1\).jpg);
+    opacity: 0.6;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.main-nav{
+    background-color: transparent;
+    padding: 8px;
+}
+.main-nav-item a{
+    margin-left: 3rem;
+    padding: 0;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.main-nav-item a:hover{
+    color: grey;
+}
+.form label,
+.form input,
+.form small{
+    display: block;
+    margin-top: 1rem;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+    margin-top: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: fit-content;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+.form input{
+    outline: none;
+    padding: 3px;
+    width: 30rem;
+    font-size: 20px;
+}
+.form input:hover{
+    border: 2px solid green;
+}
+.form label{
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+}
+.form small{
+    color:red;
+}
+.submit{
+
+    padding: 6px;
+    font-weight: bold;
+    outline: none;
+}
+.submit:hover{
+    font-weight: normal;
+}
+
+/* footer */
+.footer{
+    background-color:white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+.footer a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+@media(max-width:590px){
+    .form input{
+        width: 20rem;
+    }
+    .form{
+        padding:10px;
+        height: 80vh;
+    }
+}

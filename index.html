@@ -3,80 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Daily Quote</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <div class="container">
-        <div class="container-quote">
-            <h1>Your Today's Quote is :</h1>
-    
-            <div class="quote" id="quote"></div>
-            <p>click the get button to have your daily quote</p>
-            
-            <button class="quote-btn" id="quote-btn">get</button>
-            
-        </div>
-
-        <button id="toggle" class="toggle">
-            <i class="fa fa-bars fa-3x"></i>
-        </button>
-        <div class="side-bar" id="side-bar">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Benefits</a></li>
-                <li><a href="#">Contacts</a></li>
-            </ul>
-
-        </div>
-        <button class="form-btn" id="form-btn">JOIN US</button>
-         <div class="container-form" id="container-form">
-                <form class="form" id= "form">
-                
-                    <div class="inputArea" id="inputArea">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" placeholder="enter name">
-                        <small>Invalid</small>
-                    </div>
-                      
-                    <div class="inputArea" id="inputArea"> 
-                        <label for="email">Email</label>
-                        <input type="text" id="email" placeholder="enter email">
-                        <small>Invalid</small>
-                    </div>
-                    <div class="inputArea" id="inputArea">
-
-                        <label for="phonenumber">Phone Number</label>
-                        <input type="text" id="number" placeholder="enter phone number">
-                        <small>Invalid</small>
-                    </div>
-
-                    <div class="inputArea" id="inputArea">
-
-                        <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="enter password">
-                        <small>Invalid</small>
-                    </div>
-                    
-                    <div class="inputArea" id="inputArea">
-
-                        <label for="password2">Confirm password</label>
-                        <input type="password" id="password2" placeholder="confirm password">
-                        <small>Invalid</small>
-                        <button type="submit" id = "submit" class="submit">Submit</button>
-                    </div>
-                    
-                </form>
+    <div class="main">
+        <header class="main-header">
+            <div>
+                <a href="index.html" class="brand">Daily Quote</a>
             </div>
+            <div><nav class="main-nav">
+                    <ul class="main-nav-items">
+                        <li class="main-nav-item"><a href="./about.html">About</a></li>
+                        <li class="main-nav-item"><a href="/form.html">Register</a></li>
+                        <li class="main-nav-item"><a href="./contacts.html">Contacts</a></li>
+                    </ul>
+                    
+                </nav>
+                
+            </div>
+        </header>
+            <button class="toggle-btn" id="toggle-btn">
+                <i class="fa fa-bars fa-3x" id="bars"></i>
+            </button>
+        <nav class="mobile-nav" id="mobile-nav">
+            <button class="close" id="close">
+                <i class="fa fa-times fa-3x" id="times"></i>
+            </button>
+            <ul class="mobile-nav-items">
+                <li class="mobile-nav-item"><a href="/about.html">About</a></li>
+                <li class="mobile-nav-item"><a href="./form.html">Register</a></li>
+                <li class="mobile-nav-item"><a href="./contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
+        <div class="quote-container">
+            <h1>Your Today's Quote is :</h1>
+            <div class="quote-area" id="quote">
+            </div>
+            <button class="get-btn" id="get-btn">Get Quote</button>
         </div>
+        
     </div>
-    <div>
-
-    </div>
+    <footer class="footer">
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Kuily Balendran &copy 2021</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
     <script src="main.js"></script>
-    <script src="form.js"></script>
-    <footer class="footer">Kuily Balendran &copy;</footer>
 </body>
 </html>
