@@ -1,91 +1,55 @@
-// form validation
-const name = document.getElementById('name');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const password2 = document.getElementById('password2');
-const number = document.getElementById('number');
-const form = document.getElementById('form');
-const formBtn = document.getElementById('form-btn');
-const containerForm = document.getElementById('container-form')
+let name = document.getElementById('name');
+let email = document.getElementById('email');
+let number = document.getElementById('number');
+let password = document.getElementById('password');
+let password2 = document.getElementById('password2');
+let form = document.getElementById('form');
+let Namesmall = document.getElementById('name-small');
+let Emailsmall = document.getElementById('email-small');
+let Phonesmall = document.getElementById('number-small');
+let Passwordsmall = document.getElementById('password-small');
+let Password2small = document.getElementById('password2-small');
+let regexEmail = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+let regexNumber = /^[0-9]+$/i;
+let isValid = regexNumber.test(number.value)
 
-formBtn.addEventListener('click', () => {
-    containerForm.classList.toggle('open-form');
-})
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    console.log('click');
-    checkNumber(number);
-    checkName(name);
-    checkEmail(email);
-    checkPassword(password);
-    checkPassword2(password, password2);
-})
-// error message
-errormsg = ((input, message) => {
-    const inputArea=input.parentElement
-    inputArea.className = 'inputArea error'
-    const small= inputArea.querySelector('small');
-    small.innerText = message
-})
-// correct input
-correctmsg = (input => {
-    inputArea=input.parentElement
-    inputArea.className = 'inputArea correct small'
-})
+form.addEventListener('submit', function(e){
+    console.log('>>> name.value.length is', name.value.length)
+    console.log('>>> type of name.value.length is: ', typeof name.value.length);
 
-// validation for input fields
-checkEmail = (emailInput => {
-    let emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
-    const isEmail = emailRegex.test(emailInput.value);
-
-    if(isEmail){
-        correctmsg(emailInput)
-    }else{
-        errormsg(emailInput, 'invalid email')
-    }
-})
-
-checkName = (input => {
-    if(input.value === ''){
-        errormsg(input, 'name required')
-    }else if(input.value.length <= 2){
-        errormsg(input, 'minimum 3 characters required')
-    }else{
-        correctmsg(input)
-    }
-})
-
-checkNumber = (input => {    
-    let numericRegex  = /^[0-9]+$/i;
-    let isPhoneValid = numericRegex.test(input.value);
-
-    console.log("value of isPhoneValid is: ", isPhoneValid);
-
-    if(isPhoneValid){
-        correctmsg(input);    
+    e.preventDefault()
+    if(name.value === '' || name.value == null){
+        Namesmall.innerText='Name is required';
     } else {
-        errormsg(input, 'invalid number format')
+        Namesmall.innerText='';
     }
-})
-
-checkPassword = (input => {
-    if(!isNaN(input)&&(input.value.length==10 )){
-        errormsg(input, 'password is required')
-        }else if(input.value.length<4){
-            errormsg(input, 'minimum 4 characters is required')
-        }else{
-            correctmsg(input)
-        }
-})
-
-checkPassword2 = ((input1, input2) => {
-    if(input1.value !== input2.value){
-        errormsg(input2, 'password do not match')
-        
-    }else if(input2.value===''){
-        errormsg(input2, 'enter password again')
+    if(name.value.length <= 3){
+        console.log('>>>>>> hitting name length validation')
+        Namesmall.innerText='Name length must be minimum 3';
+    }else {
+        Namesmall.innerText='';
+    }
+    if(email.value.match(regexEmail)){
+        Emailsmall.innerText=''
     }else{
-        correctmsg(input2)
+        Emailsmall.innerText='Invalid email';
     }
+    if(number.value.match(regexNumber)){
+        Phonesmall.innerText='';
+    }else{
+        Phonesmall.innerText='Invalid phone number';
+    }
+    if(password.value.length<7){
+        Passwordsmall.innerText='Minimum 7 characters required'
+    }else {
+        Passwordsmall.innerText='';
+    }
+    if(password2.value !== password.value){
+        Password2small.innerText='Password doesn\'t match'
+    }else {
+        Password2small.innerText='';
+    }
+    
 })
+
