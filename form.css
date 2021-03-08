@@ -21,7 +21,7 @@ body{
 .main-nav-item a{
     margin-left: 3rem;
     padding: 0;
-    text-decoration: none;
+    /* text-decoration: none; */
     color: white;
     font-size: 30px;
     font-weight: bolder;
@@ -78,7 +78,7 @@ body{
 /* footer */
 .footer{
     background-color:white;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     text-align: center;
